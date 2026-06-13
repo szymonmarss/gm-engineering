@@ -27,16 +27,33 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 22px 60px;
+    padding: 18px 60px;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-.nav-logo {
-    font-size: 26px;
-    font-weight: 800;
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.brand-mark {
     color: #ed1c24;
+    border: 2px solid #ed1c24;
+    padding: 6px 10px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.brand-line {
+    display: block;
+    width: 70px;
+    height: 2px;
+    background: linear-gradient(90deg, #ed1c24, transparent);
 }
 
 .navbar ul {
