@@ -21,45 +21,25 @@ body {
 
 /* NAVBAR */
 
+/* NAVBAR */
+
 .navbar {
-    background: #1f1f1f;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 60px;
-    position: sticky;
+    position: absolute;
     top: 0;
+    left: 0;
+    width: 100%;
+    padding: 28px 70px;
     z-index: 100;
-}
-
-.nav-brand {
+    background: transparent;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 14px;
-    text-decoration: none;
-}
-
-.brand-mark {
-    color: #ed1c24;
-    border: 2px solid #ed1c24;
-    padding: 6px 10px;
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-.brand-line {
-    display: block;
-    width: 70px;
-    height: 2px;
-    background: linear-gradient(90deg, #ed1c24, transparent);
 }
 
 .navbar ul {
     display: flex;
     list-style: none;
-    gap: 28px;
+    gap: 34px;
     margin: 0;
     padding: 0;
 }
@@ -67,11 +47,29 @@ body {
 .navbar a {
     color: white;
     text-decoration: none;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: #ed1c24;
+    transition: 0.3s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
 }
 
 .navbar a:hover {
-    color: #ed1c24;
+    color: white;
 }
 
 /* HERO */
@@ -314,9 +312,9 @@ footer {
 
 @media (max-width: 900px) {
     .navbar {
-        flex-direction: column;
-        gap: 18px;
+        position: absolute;
         padding: 20px;
+        justify-content: center;
     }
 
     .navbar ul {
