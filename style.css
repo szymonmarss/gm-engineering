@@ -19,6 +19,8 @@ body {
     margin: 0 auto;
 }
 
+/* NAVBAR */
+
 .navbar {
     background: #1f1f1f;
     color: white;
@@ -55,50 +57,94 @@ body {
     color: #ed1c24;
 }
 
+/* HERO */
+
 .hero-main {
-    min-height: 90vh;
-    background: linear-gradient(135deg, #ffffff 0%, #f4f4f4 45%, #1f1f1f 45%, #111111 100%);
+    min-height: 92vh;
+    position: relative;
+    background:
+        linear-gradient(rgba(17,17,17,0.82), rgba(17,17,17,0.88)),
+        url("img/industrial-bg.jpg");
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 70px 20px;
+    padding: 90px 20px;
+    overflow: hidden;
+}
+
+.hero-main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(120deg, rgba(237,28,36,0.16), transparent 35%),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,0.035) 0,
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px,
+            transparent 90px
+        );
 }
 
 .hero-content {
+    position: relative;
+    z-index: 2;
     width: 90%;
-    max-width: 950px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-.main-logo {
-    max-width: 460px;
-    width: 90%;
-    margin-bottom: 35px;
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 70px;
 }
 
-.hero-main h1 {
-    color: #ed1c24;
-    font-size: clamp(40px, 5vw, 64px);
-    margin: 0 0 10px;
-}
-
-.hero-main h2 {
+.hero-text {
     color: white;
-    font-size: clamp(24px, 3vw, 34px);
+}
+
+.hero-label {
+    display: inline-block;
+    color: #ed1c24;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 {
+    font-size: clamp(42px, 5vw, 74px);
+    line-height: 1.05;
     margin: 0 0 25px;
 }
 
-.hero-main p {
-    color: white;
-    font-size: clamp(17px, 2vw, 22px);
+.hero-text p {
+    font-size: clamp(18px, 2vw, 24px);
     line-height: 1.6;
-    max-width: 850px;
-    margin: 0 auto 35px;
+    max-width: 760px;
+    margin: 0 0 35px;
+}
+
+.hero-logo-card {
+    background: rgba(255,255,255,0.96);
+    padding: 55px 45px;
+    border-radius: 6px;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+    border-left: 8px solid #ed1c24;
+}
+
+.main-logo {
+    width: 100%;
+    max-width: 560px;
+    display: block;
 }
 
 .hero-buttons {
     display: flex;
-    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
@@ -121,15 +167,17 @@ body {
 }
 
 .btn-dark {
-    background: #1f1f1f;
+    background: transparent;
     color: white;
-    border: 1px solid #ffffff;
+    border: 1px solid white;
 }
 
 .btn-dark:hover {
     background: white;
     color: #1f1f1f;
 }
+
+/* SEKCJE */
 
 .section {
     padding: 90px 20px;
@@ -157,6 +205,8 @@ body {
     font-size: 20px;
     line-height: 1.7;
 }
+
+/* KARTY */
 
 .services {
     display: grid;
@@ -190,6 +240,8 @@ body {
     line-height: 1.5;
 }
 
+/* TECHNOLOGIE */
+
 .tech-list {
     display: flex;
     justify-content: center;
@@ -206,6 +258,8 @@ body {
     border-radius: 4px;
     font-weight: 700;
 }
+
+/* KONTAKT */
 
 .contact {
     background: #1f1f1f;
@@ -239,6 +293,8 @@ footer {
     font-size: 14px;
 }
 
+/* RESPONSYWNOŚĆ */
+
 @media (max-width: 900px) {
     .navbar {
         flex-direction: column;
@@ -251,12 +307,26 @@ footer {
         justify-content: center;
         gap: 15px;
     }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-logo-card {
+        padding: 35px 25px;
+    }
 }
 
 @media (max-width: 768px) {
     .hero-main {
-        background: linear-gradient(180deg, #ffffff 0%, #ffffff 35%, #1f1f1f 35%, #111111 100%);
         min-height: auto;
+        padding: 80px 20px;
     }
 
     .section {
@@ -269,15 +339,5 @@ footer {
 
     .contact-box {
         font-size: 18px;
-    }
-}
-
-@media (min-width: 1800px) {
-    .container {
-        max-width: 1500px;
-    }
-
-    .main-logo {
-        max-width: 540px;
     }
 }
