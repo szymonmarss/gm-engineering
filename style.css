@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -26,7 +30,7 @@ body {
 .navbar ul {
     display: flex;
     list-style: none;
-    gap: 32px;
+    gap: 30px;
     margin: 0;
 }
 
@@ -40,62 +44,95 @@ body {
     color: #ed1c24;
 }
 
-.top {
+.hero-main {
+    min-height: 90vh;
+    background: linear-gradient(135deg, #ffffff 0%, #f4f4f4 45%, #1f1f1f 45%, #111111 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 70px 20px;
-    background: #ffffff;
 }
 
-.logo {
-    max-width: 650px;
+.hero-content {
+    max-width: 950px;
+}
+
+.main-logo {
+    max-width: 620px;
     width: 90%;
+    margin-bottom: 40px;
 }
 
-.hero {
-    background: linear-gradient(135deg, #1f1f1f, #111111);
-    color: white;
-    padding: 90px 20px;
-    text-align: center;
-}
-
-.hero h1 {
+.hero-main h1 {
     color: #ed1c24;
-    font-size: 56px;
-    margin: 0 0 15px;
+    font-size: 58px;
+    margin: 0 0 10px;
 }
 
-.hero h2 {
+.hero-main h2 {
+    color: white;
     font-size: 30px;
     margin: 0 0 25px;
 }
 
-.hero p {
+.hero-main p {
+    color: white;
     font-size: 21px;
-    max-width: 850px;
-    margin: 0 auto;
     line-height: 1.6;
+    max-width: 850px;
+    margin: 0 auto 35px;
 }
 
-section {
-    padding: 80px 20px;
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-section h2 {
+.btn {
+    padding: 15px 28px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.btn-red {
+    background: #ed1c24;
+    color: white;
+}
+
+.btn-dark {
+    background: #1f1f1f;
+    color: white;
+    border: 1px solid #ffffff;
+}
+
+.section {
+    padding: 90px 20px;
+}
+
+.section h2 {
     text-align: center;
-    font-size: 38px;
-    margin-bottom: 30px;
+    font-size: 40px;
+    margin-bottom: 35px;
 }
 
-#o-firmie p {
-    max-width: 900px;
+.light {
+    background: white;
+}
+
+.gray {
+    background: #f5f5f5;
+}
+
+.section-text {
+    max-width: 950px;
     margin: 0 auto;
     text-align: center;
     font-size: 20px;
     line-height: 1.7;
-}
-
-#uslugi {
-    background: #f5f5f5;
 }
 
 .services {
@@ -109,7 +146,7 @@ section h2 {
     width: 280px;
     background: white;
     padding: 35px 25px;
-    border-radius: 14px;
+    border-radius: 12px;
     border-top: 5px solid #ed1c24;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     transition: 0.3s;
@@ -122,12 +159,51 @@ section h2 {
 
 .card h3 {
     color: #ed1c24;
-    font-size: 24px;
+    font-size: 23px;
 }
 
 .card p {
     font-size: 17px;
     line-height: 1.5;
+}
+
+.tech-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tech-list span {
+    background: #1f1f1f;
+    color: white;
+    padding: 15px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.contact {
+    background: #1f1f1f;
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    color: #ed1c24;
+}
+
+.contact p {
+    font-size: 20px;
+}
+
+footer {
+    background: #111111;
+    color: #cccccc;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
 }
 
 @media (max-width: 768px) {
@@ -140,15 +216,19 @@ section h2 {
     .navbar ul {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
         padding: 0;
+        gap: 15px;
     }
 
-    .hero h1 {
+    .hero-main {
+        background: linear-gradient(180deg, #ffffff 0%, #ffffff 35%, #1f1f1f 35%, #111111 100%);
+    }
+
+    .hero-main h1 {
         font-size: 40px;
     }
 
-    .hero p {
+    .hero-main p {
         font-size: 18px;
     }
 }
