@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -7,6 +11,12 @@ body {
     font-family: Arial, sans-serif;
     background: #ffffff;
     color: #1f1f1f;
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .navbar {
@@ -30,8 +40,9 @@ body {
 .navbar ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 28px;
     margin: 0;
+    padding: 0;
 }
 
 .navbar a {
@@ -55,30 +66,31 @@ body {
 }
 
 .hero-content {
+    width: 90%;
     max-width: 950px;
 }
 
 .main-logo {
-    max-width: 620px;
+    max-width: 460px;
     width: 90%;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .hero-main h1 {
     color: #ed1c24;
-    font-size: 58px;
+    font-size: clamp(40px, 5vw, 64px);
     margin: 0 0 10px;
 }
 
 .hero-main h2 {
     color: white;
-    font-size: 30px;
+    font-size: clamp(24px, 3vw, 34px);
     margin: 0 0 25px;
 }
 
 .hero-main p {
     color: white;
-    font-size: 21px;
+    font-size: clamp(17px, 2vw, 22px);
     line-height: 1.6;
     max-width: 850px;
     margin: 0 auto 35px;
@@ -96,11 +108,16 @@ body {
     text-decoration: none;
     font-weight: 700;
     border-radius: 4px;
+    transition: 0.3s;
 }
 
 .btn-red {
     background: #ed1c24;
     color: white;
+}
+
+.btn-red:hover {
+    background: #b9151b;
 }
 
 .btn-dark {
@@ -109,13 +126,19 @@ body {
     border: 1px solid #ffffff;
 }
 
+.btn-dark:hover {
+    background: white;
+    color: #1f1f1f;
+}
+
 .section {
     padding: 90px 20px;
+    scroll-margin-top: 90px;
 }
 
 .section h2 {
     text-align: center;
-    font-size: 40px;
+    font-size: clamp(32px, 4vw, 44px);
     margin-bottom: 35px;
 }
 
@@ -136,20 +159,19 @@ body {
 }
 
 .services {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
 .card {
-    width: 280px;
     background: white;
     padding: 35px 25px;
     border-radius: 12px;
     border-top: 5px solid #ed1c24;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     transition: 0.3s;
+    min-height: 220px;
 }
 
 .card:hover {
@@ -160,6 +182,7 @@ body {
 .card h3 {
     color: #ed1c24;
     font-size: 23px;
+    margin-top: 0;
 }
 
 .card p {
@@ -172,7 +195,7 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     gap: 18px;
-    max-width: 900px;
+    max-width: 950px;
     margin: 0 auto;
 }
 
@@ -194,8 +217,18 @@ body {
     color: #ed1c24;
 }
 
-.contact p {
+.contact-box {
     font-size: 20px;
+    line-height: 1.7;
+}
+
+.contact a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    color: #ed1c24;
 }
 
 footer {
@@ -206,29 +239,45 @@ footer {
     font-size: 14px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .navbar {
         flex-direction: column;
-        gap: 20px;
+        gap: 18px;
         padding: 20px;
     }
 
     .navbar ul {
-        flex-direction: column;
-        text-align: center;
-        padding: 0;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 15px;
     }
+}
 
+@media (max-width: 768px) {
     .hero-main {
         background: linear-gradient(180deg, #ffffff 0%, #ffffff 35%, #1f1f1f 35%, #111111 100%);
+        min-height: auto;
     }
 
-    .hero-main h1 {
-        font-size: 40px;
+    .section {
+        padding: 70px 20px;
     }
 
-    .hero-main p {
+    .section-text {
         font-size: 18px;
+    }
+
+    .contact-box {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .container {
+        max-width: 1500px;
+    }
+
+    .main-logo {
+        max-width: 540px;
     }
 }
